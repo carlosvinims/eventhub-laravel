@@ -41,7 +41,7 @@ class EventRequest extends FormRequest
             function (Validator $validator): void {
                 $event = $this->route('event');
 
-                if(!$event instanceof Event) {
+                if(!$event instanceof $event) {
                     return;
                 }
 
