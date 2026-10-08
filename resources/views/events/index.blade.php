@@ -58,7 +58,7 @@
     <div class="col-12">
         <div class="alert alert-info"> Nenhum evento encontrado. 
         </div> 
-</div> 
+    </div> 
 @endforelse 
 </div> 
 <div class="mt-4"> {{ $events->links() }}</div> 
