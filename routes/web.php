@@ -20,7 +20,7 @@ Route::middleware('guest')->group(function () {
 
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 
-    Route::post('/register', [AuthController::class, 'register'])->name('register.stores');
+    Route::post('/register', [AuthController::class, 'register'])->name('register.store');
 
 });
 
@@ -43,4 +43,3 @@ Route::middleware('auth')->group(function () {
         Route::resource('events', AdminCategoryController::class)->except(['show']);
     });
 });
-

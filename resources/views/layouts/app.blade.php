@@ -61,7 +61,6 @@
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
-        @endif
 
         @if(session('error'))
         <div class="alert alert-danger">
@@ -69,11 +68,11 @@
         </div>
         @endif
 
-        @if(errors->any())
+        @if($errors->any())
         <div class="alert alert-danger">
             <strong>Verifique os dados informados:</strong>
             <ul class="mb-0mt-2">
-                @foreach(errors->all() as $error)
+                @foreach($errors->all() as $error)
                 <li>{{ $error }}</li>
                 @endforeach
             </ul>

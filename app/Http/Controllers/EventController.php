@@ -11,7 +11,7 @@ class EventController extends Controller
 {
     public function index(Request $request): View
     {
-        $query = Event::guery()->with('category')->withCount(['registrations as confirmed_registrations_count'
+        $query = Event::query()->with('category')->withCount(['registrations as confirmed_registrations_count'
         =>fn($query) => $query->where('status', 'confirmed'),])->where('status', 'scheduled')->where('start_at', '>', now());
         
         if($request->filled('search')) {
