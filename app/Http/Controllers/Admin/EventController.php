@@ -50,7 +50,7 @@ class EventController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Event $event): View
+    public function edit(Event $event)
     {
         if ($event->hasStarted()) { 
 

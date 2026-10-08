@@ -50,25 +50,13 @@ class RegistrationsService
         });
     }
 
-   public function cancel( 
-User $user, 
-Registration $registration 
-): void { 
-if ($registration->user_id !== 
-user->id)abort(403);if(registration->isCanceled()) { 
-throw new \DomainException( 
-'Esta inscrição já foi cancelada.' 
-); 
-} 
-$event = registration->event;if(event->hasStarted()) { 
-throw new \DomainException( 
-'Não é possível cancelar a inscrição após o início do evento.' 
-); 
-} 
-$registration->update([ 
-'status' => 'canceled', 
-'canceled_at' => now(), 
-]); 
+   public function cancel( User $user,Registration $registration ): void 
+   { 
+    if ($registration->user_id !== $user->id)abort(403);
+    if($registration->isCanceled()) 
+        { throw new \DomainException( 'Esta inscrição já foi cancelada.');} 
+    $event = $registration->event;if($event->hasStarted()) { 
+        throw new \DomainException( 'Não é possível cancelar a inscrição após o início do evento.' ); } 
+        $registration->update([ 'status' => 'canceled', 'canceled_at' => now(), ]); 
 } 
 } 
-}
