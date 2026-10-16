@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/inscricoes/{registration}', [RegistrationController::class, 'destroy'])->name('registrations.destroy');
 
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
-        Route::resource('categpries', AdminCategoryController::class);
+        Route::resource('categories', AdminCategoryController::class);
 
         Route::get('/events/{event}/participants', [AdminCategoryController::class, 'participants'])->name('events.participants');
 

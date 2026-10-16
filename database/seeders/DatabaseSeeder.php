@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         User::updateOrCreate(
             ['email' => 'admin@eventhub.test'],
             ['name' => 'Adiministrador',
-             'password' => Hash::make('password'),
+             'password' => Hash::make('senha123'),
              'role' => 'admin',
              'status' => true,
               ]
